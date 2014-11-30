@@ -43,7 +43,8 @@ gulp.task('test-unit', function () {
 });
 
 
-gulp.task('watch', function() {
+gulp.task('watch', ['test','watch-mocha']);
+gulp.task('watch-mocha', function() {
    gulp.watch(['./src/**/*.js','./lib/**/*.js', './test/**/*.js'], ['test']);
 });
 
