@@ -70,10 +70,10 @@ describe('biojs-stat-seqs module', function(){
         equal(roundMap(stat.identity()), [ 0.8, 0.57, 0.4 ]);
     });
 
-   it('different seq', function(){
+    it('different seq', function(){
       equal(stat.identity("AAAAA"), [ 0.6, 0.2, 0.4 ]);
     });
-  it('do not cache the output', function(){
+    it('do not cache the output', function(){
       equal(stat.identity("AAAAA"), [ 0.6, 0.2, 0.4 ]);
       equal(stat.identity(), [ 1, 0.4, 0.4 ]);
       equal(stat.identity("BBBBB"), [ 0.4, 0.2, 0.0 ]);
@@ -149,11 +149,7 @@ describe('biojs-stat-seqs module', function(){
 
   describe('#frequency()', function(){
     it('test default', function(){
-      var arr = stat.frequency();
-      arr = _.map(arr,function(e){
-        return roundMap(e);
-      });
-      equal(arr, [ { A: 1 },
+      equal(roundArrMap(stat.frequency()), [ { A: 1 },
             { A: 0.67, C: 0.33 },
             { A: 0.33, C: 0.33, T: 0.33 },
             { B: 0.33, C: 0.33, T: 0.33 },
@@ -165,12 +161,7 @@ describe('biojs-stat-seqs module', function(){
         "ACCCBCC",
         "AATTC"];
         stat.resetSeqs(seqs);
-        var arr = stat.frequency();
-        arr = _.map(arr,function(e){
-          return roundMap(e);
-        });
-
-        equal(arr, [ { E: 0.33, A: 0.67 },
+        equal(roundArrMap(stat.frequency()), [ { E: 0.33, A: 0.67 },
               { A: 0.67, C: 0.33 },
               { A: 0.33, C: 0.33, T: 0.33 },
               { B: 0.33, C: 0.33, T: 0.33 },
@@ -179,6 +170,84 @@ describe('biojs-stat-seqs module', function(){
               { C: 1 } ]);
     });
   });
+
+  describe('#ic()', function(){
+    it('test default', function(){
+      equal(roundMap(stat.ic()), [ 0, 0.92, 1.58, 1.58, 0.92 ]);
+    });
+    it('test different length', function(){
+
+      var seqs = ["GAABB",
+        "ACCCGCC",
+        "AATTC"];
+        stat.resetSeqs(seqs);
+
+        equal(roundMap(stat.ic()), [ 0.92, 0.92, 1.58, 1.58, 1.58, 0, 0 ] );
+    });
+    it('scaled', function(){
+      equal(roundMap(stat.scale(stat.ic())), [ 0, 0.46, 0.79, 0.79, 0.46 ]);
+    });
+  });
+
+  describe('#conservation()', function(){
+    it('test default', function(){
+      equal(roundMap(stat.conservation()), [ 2, 1.08, 0.42, 0.42, 1.08 ] );
+    });
+    it('test different length', function(){
+
+      var seqs = ["GAABB",
+        "ACCCGCC",
+        "AATTC"];
+        stat.resetSeqs(seqs);
+
+        equal(roundMap(stat.conservation()), [ 1.08, 1.08, 0.42, 0.42, 0.42, 2, 2 ]);
+    });
+
+    it('scaled', function(){
+      equal(roundMap(stat.scale(stat.conservation())), [ 1, 0.54, 0.21, 0.21, 0.54 ] );
+    });
+  });
+
+
+  describe('#conservation per letter()', function(){
+    it('test default', function(){
+      var res = roundMapMap(stat.conservResidue());
+      equal(res, [ { A: 2 },
+            { A: 0.72, C: 0.36 },
+            { A: 0.14, C: 0.14, T: 0.14 },
+            { B: 0.14, C: 0.14, T: 0.14 },
+            { B: 0.72, C: 0.36 } ]
+           );
+    });
+    it('test different length', function(){
+
+      var seqs = ["GAABB",
+        "ACCCGCC",
+        "AATTC"];
+        stat.resetSeqs(seqs);
+
+        var res = roundMapMap(stat.conservResidue());
+        equal(res, [ { G: 0.36, A: 0.72 },
+              { A: 0.72, C: 0.36 },
+              { A: 0.14, C: 0.14, T: 0.14 },
+              { B: 0.14, C: 0.14, T: 0.14 },
+              { B: 0.14, G: 0.14, C: 0.14 },
+              { C: 2 },
+              { C: 2 } ]);
+    });
+
+    it('scaled', function(){
+      var res = roundMapMap(stat.conservResidue({scaled: true}));
+      equal(res, [ { A: 1 },
+            { A: 0.36, C: 0.18 },
+            { A: 0.07, C: 0.07, T: 0.07 },
+            { B: 0.07, C: 0.07, T: 0.07 },
+            { B: 0.36, C: 0.18 } ]
+           );
+    });
+  });
+
+
 });
 
 function round(arr,to){
@@ -192,6 +261,15 @@ function roundMap(arr,to){
   })
 }
 
-
-
+function roundArrMap(arr,to){
+  return _.map(arr,function(e){
+    return roundMap(e,to);
+  });
+}
+function roundMapMap(arr,to){
+  return _.each(arr,function(val,key,obj){
+    obj[key] = val = roundMap(val,to);
+    return val;
+  });
+}
 
