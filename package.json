@@ -1,0 +1,54 @@
+{
+  "name": "biojs-stat-seqs",
+  "description": "A module to analye multiple seqs (information content, frequency, ...)",
+  "version": "0.1.0",
+  "homepage": "https://github.com/greenify/biojs-stat-seqs",
+  "author": {
+    "name": "greenify",
+    "email": "greeenify@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/greenify/biojs-stat-seqs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/greenify/biojs-stat-seqs/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/greenify/biojs-stat-seqs/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "gulp test",
+    "prepublish": "gulp",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "del": "^0.1.3",
+    "gulp": "^3.8.8",
+    "gulp-mocha": "^1.0.0",
+    "gulp-watch": "^1.0.2",
+    "mkdirp": "^0.5.0",
+    "mocha": "~1.20.1"
+  },
+  "shields": {
+    "test": {
+      "img": "https://travis-ci.org/greenify/biojs-stat-seqs.svg?branch=master",
+      "href": "https://travis-ci.org/greenify/biojs-stat-seqs"
+    }
+  },
+  "keywords": [
+    "seqs",
+    "msa",
+    "entropy",
+    "information content",
+    "biojs"
+  ]
+}
