@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/biojs-stat-seqs.svg)](https://www.npmjs.org/package/biojs-stat-seqs) 
 [![Build Status](https://secure.travis-ci.org/greenify/biojs-stat-seqs.png?branch=master)](http://travis-ci.org/greenify/biojs-stat-seqs) 
 
-> A module to analye multiple seqs (information content, frequency, ...)
+> A module to analyze multiple seqs (information content, frequency, ...)
 
 ## Getting Started
 Install the module with: `npm install biojs-stat-seqs`
