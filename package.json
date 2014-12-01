@@ -1,7 +1,7 @@
 {
   "name": "biojs-stat-seqs",
   "description": "A module to analyze multiple seqs (information content, frequency, ...)",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/greenify/biojs-stat-seqs",
   "author": {
     "name": "greenify",
