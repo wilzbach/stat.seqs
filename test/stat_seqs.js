@@ -96,6 +96,22 @@ describe('biojs-stat-seqs module', function(){
     });
   });
 
+  describe('#gapCalc()', function(){
+    it('test default', function(){
+      equal(stat.gaps(), [ 0, 0, 0, 0, 0 ]);
+    });
+    it('test different length', function(){
+
+      var seqs = [
+        "-A-BB",
+        "A-C-B-C",
+        "A-CCBCC",
+        "A--TC"];
+        stat.resetSeqs(seqs);
+
+        equal(round(stat.gaps()), [ 0.25, 0.75, 0.5,0.25, 0, 0.5, 0 ]);
+    });
+  });
 
   describe('#addSeqs()', function(){
 
