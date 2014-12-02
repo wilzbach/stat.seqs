@@ -113,6 +113,8 @@ stats.conservResidue({scaled: true})
 ```
 stats.maxLength() 
 > 4
+stats.gaps() // relative percentage of gaps for a column
+> [0, 0, 0, 0]
 ```
 
 ### Operate with the sequences

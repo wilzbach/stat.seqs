@@ -6,6 +6,7 @@ var stats = MSAStats(seqs);
 // Trivia
 
 console.log("maxLength",stats.maxLength());
+console.log("gaps", roundMap(stats.gaps())) // calculates relative percentage of gaps
 
 // Frequency
 
@@ -14,13 +15,14 @@ console.log("frequency", stats.frequency()); // calculates the relative frequenc
 
 // Sequence identity and consensus
 
-console.log(stats.consensus()) // calculates the consensus
-console.log(stats.identity()) // identity to the consensus seq
-console.log(stats.identity("AAAA")) // identity to the given seq
+console.log("consensus", stats.consensus()) // calculates the consensus
+console.log("identity", roundArr(stats.identity())) // identity to the consensus seq
+console.log("identity to AAAA", roundArr(stats.identity("AAAA"))) // identity to the given seq
 
 // Background
 
-console.log("background", stats.background()) // calculates the background distribution of all seqs
+console.log("background", roundMap(stats.background())) // calculates the background distribution of all seqs
+
 
 
 // Information content and conservation
@@ -44,10 +46,16 @@ function ic(){
   console.log('conservation residue scaled',roundArrMap(stats.conservResidue({scaled: true}))) // calculate conservation per resdiue
 }
 
+console.log();
+console.log("---ic---");
+console.log();
+
 ic();
 stats.useBackground();
 
-console.log("using a background");
+console.log();
+console.log("----using a background---");
+console.log();
 
 ic();
 

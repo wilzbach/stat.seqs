@@ -37,7 +37,7 @@ gulp.task('test', ['test-unit']);
 
 gulp.task('test-unit', function () {
 
-    return gulp.src('./test/**/*.js', {read: false})
+    return gulp.src('./test/**/test*.js', {read: false})
         .pipe(mocha({reporter: 'spec',
                     useColors: true}));
 });
