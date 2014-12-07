@@ -258,10 +258,10 @@ describe('biojs-stat-seqs module', function() {
       ];
       stat.resetSeqs(seqs);
 
-      equal(map.roundMap(stat.ic()), [1.06, 0.39, 1.58, 1.58, 1.58, 0, 0]);
+      equal(map.roundMap(stat.ic()), [1, 0, 1.58, 1.58, 1.58, 0, 0]);
     });
 
-    it('test with gaps II', function() {
+    it('gaps shouldnt change the ic', function() {
 
       var seqs = ["A",
         "A",
@@ -269,8 +269,19 @@ describe('biojs-stat-seqs module', function() {
         "-"
       ];
       stat.resetSeqs(seqs);
+      equal(map.roundMap(stat.ic()), [0]);
 
-      equal(map.roundMap(stat.ic()), [0.31]);
+      seqs = ["A",
+        "A",
+        "A",
+        "-",
+        "-",
+        "-",
+        "-"
+      ];
+      stat.resetSeqs(seqs);
+
+      equal(map.roundMap(stat.ic()), [0]);
     });
 
 
