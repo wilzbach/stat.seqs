@@ -1,6 +1,6 @@
 /*
- * biojs-stat-seqs
- * https://github.com/greenify/biojs-stat-seqs
+ * stat.seqs
+ * https://github.com/greenify/stat.seqs
  *
  * Copyright (c) 2014 greenify
  * Licensed under the MIT license.

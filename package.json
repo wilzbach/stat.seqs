@@ -1,23 +1,23 @@
 {
-  "name": "biojs-stat-seqs",
+  "name": "stat.seqs",
   "description": "A module to analyze multiple seqs (information content, frequency, ...)",
   "version": "0.1.6",
-  "homepage": "https://github.com/greenify/biojs-stat-seqs",
+  "homepage": "https://github.com/greenify/stat.seqs",
   "author": {
     "name": "greenify",
     "email": "greeenify@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/greenify/biojs-stat-seqs.git"
+    "url": "git://github.com/greenify/stat.seqs.git"
   },
   "bugs": {
-    "url": "https://github.com/greenify/biojs-stat-seqs/issues"
+    "url": "https://github.com/greenify/stat.seqs/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/greenify/biojs-stat-seqs/blob/master/LICENSE"
+      "url": "https://github.com/greenify/stat.seqs/blob/master/LICENSE"
     }
   ],
   "main": "lib/index.js",
@@ -41,8 +41,8 @@
   },
   "shields": {
     "test": {
-      "img": "https://travis-ci.org/greenify/biojs-stat-seqs.svg?branch=master",
-      "href": "https://travis-ci.org/greenify/biojs-stat-seqs"
+      "img": "https://travis-ci.org/greenify/stat.seqs.svg?branch=master",
+      "href": "https://travis-ci.org/greenify/stat.seqs"
     }
   },
   "keywords": [

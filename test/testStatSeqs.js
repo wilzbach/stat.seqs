@@ -1,6 +1,6 @@
 /*
- * biojs-stat-seqs
- * https://github.com/greenify/biojs-stat-seqs
+ * stat.seqs
+ * https://github.com/greenify/stat.seqs
  *
  * Copyright (c) 2014 greenify
  * Licensed under the MIT license.
@@ -27,7 +27,7 @@ beforeEach("prepare stat", function() {
   stat = new statProgram(seqs);
 });
 
-describe('biojs-stat-seqs module', function() {
+describe('stat.seqs module', function() {
 
   describe('#wrong input()', function() {
     it('string input', function() {

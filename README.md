@@ -1,15 +1,15 @@
-# biojs-stat-seqs
+# stat.seqs
 
-[![NPM version](http://img.shields.io/npm/v/biojs-stat-seqs.svg)](https://www.npmjs.org/package/biojs-stat-seqs) 
-[![Build Status](https://secure.travis-ci.org/greenify/biojs-stat-seqs.png?branch=master)](http://travis-ci.org/greenify/biojs-stat-seqs) 
+[![NPM version](http://img.shields.io/npm/v/stat.seqs.svg)](https://www.npmjs.org/package/stat.seqs) 
+[![Build Status](https://secure.travis-ci.org/greenify/stat.seqs.png?branch=master)](http://travis-ci.org/greenify/stat.seqs) 
 
 > A module to analyze multiple seqs (information content, frequency, ...)
 
 ## Getting Started
-Install the module with: `npm install biojs-stat-seqs`
+Install the module with: `npm install stat.seqs`
 
 ```javascript
-var MSAStats = require('biojs-stat-seqs');
+var MSAStats = require('stat.seqs');
 var seqs = ["AACG", "CACG", "AAGC", "CAAG"];
 var stats = MSAStats(seqs);
 ```
@@ -129,10 +129,10 @@ stats.removeSeq(2) // you can also use indexes
 
 ## Contributing
 
-Please submit all issues and pull requests to the [greenify/biojs-stat-seqs](http://github.com/greenify/biojs-stat-seqs) repository!
+Please submit all issues and pull requests to the [greenify/stat.seqs](http://github.com/greenify/stat.seqs) repository!
 
 ## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/greenify/biojs-stat-seqs/issues).
+If you have any problem or suggestion please open an issue [here](https://github.com/greenify/stat.seqs/issues).
 
 ## License 
 
