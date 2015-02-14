@@ -132,6 +132,7 @@ stats.removeSeq(2) // you can also use indexes
 Please submit all issues and pull requests to the [greenify/stat.seqs](http://github.com/greenify/stat.seqs) repository!
 
 ## Support
+
 If you have any problem or suggestion please open an issue [here](https://github.com/greenify/stat.seqs/issues).
 
 ## License 
