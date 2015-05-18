@@ -397,19 +397,21 @@ describe('stat.seqs module', function() {
         "----",
         "----"
       ];
-      stat.resetSeqs(seqs);
+      stat = new statProgram(seqs, {useGaps: true});
       var res = map.roundMapMap(stat.conservResidue({
         scaled: true
       }));
       equal(res, [{
         A: 0.5
       }, {
-        C: 0.25,
-        T: 0.25
+        C: 0.13,
+        T: 0.13
       },{
         A: 0.25
       }, {
       }]);
+      // reset to default
+      stat = new statProgram(seqs);
     });
 
     it('scaled with gaps ii', function() {
@@ -421,19 +423,21 @@ describe('stat.seqs module', function() {
         "----",
         "----"
       ];
-      stat.resetSeqs(seqs);
+      stat = new statProgram(seqs, {useGaps: true});
       var res = map.roundMapMap(stat.conservResidue({
         scaled: true
       }));
       equal(res, [{
         A: 0.6
       }, {
-        C: 0.36,
-        T: 0.18
+        C: 0.22,
+        T: 0.11
       },{
         A: 0.2
       }, {
       }]);
+      // reset to default
+      stat = new statProgram(seqs);
     });
 
 
