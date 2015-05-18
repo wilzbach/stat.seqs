@@ -1,7 +1,7 @@
 {
   "name": "stat.seqs",
   "description": "A module to analyze multiple seqs (information content, frequency, ...)",
-  "version": "0.1.18",
+  "version": "0.1.20",
   "homepage": "https://github.com/greenify/stat.seqs",
   "author": {
     "name": "greenify",
