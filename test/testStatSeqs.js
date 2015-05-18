@@ -388,6 +388,56 @@ describe('stat.seqs module', function() {
         C: 0.18
       }]);
     });
+
+    it('scaled with gaps', function() {
+
+      var seqs = [
+        "ACA-",
+        "AT--",
+        "----",
+        "----"
+      ];
+      stat.resetSeqs(seqs);
+      var res = map.roundMapMap(stat.conservResidue({
+        scaled: true
+      }));
+      equal(res, [{
+        A: 0.5
+      }, {
+        C: 0.25,
+        T: 0.25
+      },{
+        A: 0.25
+      }, {
+      }]);
+    });
+
+    it('scaled with gaps ii', function() {
+
+      var seqs = [
+        "ACA-",
+        "AC--",
+        "AT--",
+        "----",
+        "----"
+      ];
+      stat.resetSeqs(seqs);
+      var res = map.roundMapMap(stat.conservResidue({
+        scaled: true
+      }));
+      equal(res, [{
+        A: 0.6
+      }, {
+        C: 0.36,
+        T: 0.18
+      },{
+        A: 0.2
+      }, {
+      }]);
+    });
+
+
+
   });
 
 
